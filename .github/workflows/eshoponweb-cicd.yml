@@ -1,15 +1,15 @@
 name: eShopOnWeb Build and Test
 
 #Triggers (uncomment line below to use it)
-#on: [push, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: rg-eshoponweb-NAME
-  LOCATION: westeurope
+  RESOURCE-GROUP: rg-eshoponweb-eddienj
+  LOCATION: westus2
   TEMPLATE-FILE: infra/webapp.bicep
-  SUBSCRIPTION-ID: YOUR-SUBS-ID
-  WEBAPP-NAME: eshoponweb-webapp-NAME
+  SUBSCRIPTION-ID: 51a2d7f6-85fd-438e-88f5-691a959c7707
+  WEBAPP-NAME: eshoponweb-webapp-eddienj
 
 jobs:
   #Build, test and publish .net web project in repository
@@ -19,7 +19,7 @@ jobs:
       #checkout the repository
       - uses: actions/checkout@v5
       #prepare runner for desired .net version SDK
-      - name: Setup .NET
+      - name: Eddien J
         uses: actions/setup-dotnet@v5
         with:
           dotnet-version: "8.0.x"
